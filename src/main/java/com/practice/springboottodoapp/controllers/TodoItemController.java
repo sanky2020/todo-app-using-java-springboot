@@ -1,7 +1,6 @@
 package com.practice.springboottodoapp.controllers;
 
 import java.time.Instant;
-import java.time.ZoneId;
 
 import jakarta.validation.Valid;
 
@@ -31,7 +30,6 @@ public class TodoItemController {
         logger.info("request to GET index");
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("todoItems", todoItemRepository.findAll());
-        modelAndView.addObject("today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
         return modelAndView;
     }
 

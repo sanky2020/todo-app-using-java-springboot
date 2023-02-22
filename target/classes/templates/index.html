@@ -4,24 +4,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      th:rel="stylesheet"
-      th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} "
-    />
+
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
     <div class="container">
-      <h1 class="text-center">Todo List</h1>
-      <hr />
-      <p th:text="|Happy ${today}|">Today</p>
-      <table class="table table-bordered table-striped">
+      <h1 class="center">Todo List</h1>
+
+      <table class="table">
         <thead>
           <tr>
             <th>Actions</th>
-            <th>Id</th>
             <th>Description</th>
-            <th>Complete</th>
+            <th>Completed</th>
             <th>Created Date</th>
             <th>Modified Date</th>
           </tr>
@@ -29,21 +25,18 @@
         <tbody>
           <tr
             th:each="item : ${todoItems}"
-            th:class="${item.complete} ? success : warning"
+            th:class="${item.complete} ? completed : '' "
           >
             <td>
-              <div class="btn btn-group-sm" role="group">
-                <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}"
+              <div class="btn" role="group">
+                <a class="btn edit" th:href="@{/edit/{id}(id=${item.id})}"
                   >Edit</a
                 >
-                <a
-                  class="btn btn-danger"
-                  th:href="@{/delete/{id}(id=${item.id})}"
+                <a class="btn delete" th:href="@{/delete/{id}(id=${item.id})}"
                   >Delete</a
                 >
               </div>
             </td>
-            <td th:text="${item.id}">item_id</td>
             <td th:text="${item.description}">item_description</td>
             <td th:text="${item.complete}">item_complete</td>
             <td th:text="${item.createdDate}">item_created_date</td>
@@ -52,10 +45,9 @@
         </tbody>
       </table>
 
-      <p><a class="btn btn-success" href="/create-todo">Add a Todo!</a></p>
+      <p><a class="btn success" href="/create-todo">Add a Todo!</a></p>
     </div>
 
     <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
   </body>
 </html>

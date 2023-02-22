@@ -67,11 +67,12 @@
         </dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>3.4.1</version>
-		</dependency>
+		</dependency> -->
+		
 		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>

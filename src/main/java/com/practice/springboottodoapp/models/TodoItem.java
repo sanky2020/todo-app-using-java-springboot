@@ -50,8 +50,8 @@ public class TodoItem {
     
     @Override
     public String toString() {
-        return String.format("TodoItem{id=%d, description='%s', complete='%s', createdDate='%s', modifiedDate='%s'}",
-        id, description, complete, createdDate, modifiedDate);
+        return String.format("TodoItem{ description='%s', complete='%s', createdDate='%s', modifiedDate='%s'}",
+        description, complete, createdDate, modifiedDate);
     }
 
     

@@ -24,8 +24,8 @@ public class TodoItemDataLoader implements CommandLineRunner {
 
     private void loadSeedData() {
         if (todoItemRepository.count() == 0) {
-            TodoItem todoItem1 = new TodoItem("get the milk");
-            TodoItem todoItem2 = new TodoItem("rake the leaves");
+            TodoItem todoItem1 = new TodoItem("Java");
+            TodoItem todoItem2 = new TodoItem("Springboot");
 
             todoItemRepository.save(todoItem1);
             todoItemRepository.save(todoItem2); 

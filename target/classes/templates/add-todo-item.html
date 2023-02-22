@@ -4,15 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      th:rel="stylesheet"
-      th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} "
-    />
+
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
     <div class="container">
-      <div class="col-md-6">
+      <div class="add-todo-section">
         <h1>Add a new Todo Item</h1>
         <form
           action="#"
@@ -20,10 +18,10 @@
           th:object="${todoItem}"
           method="POST"
         >
-          <div class="form-group">
-            <label for="description">Description</label>
+          <div class="input-wrapper">
+            <label for="description" class="label">Description</label>
             <input
-              class="form-control"
+              class="input"
               type="text"
               th:field="*{description}"
               id="description"
@@ -35,7 +33,7 @@
             ></span>
           </div>
 
-          <button type="submit" class="btn btn-success">Add Todo!</button>
+          <button type="submit" class="btn success mt-20">Add Todo!</button>
         </form>
       </div>
     </div>
